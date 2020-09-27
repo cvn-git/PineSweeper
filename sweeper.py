@@ -282,7 +282,7 @@ if __name__ == '__main__':
 
     # For QSettings
     QCoreApplication.setOrganizationName('CVN')
-    QCoreApplication.setOrganizationDomain('cvnguyen.net')
+    QCoreApplication.setOrganizationDomain('github.com')
     QCoreApplication.setApplicationName('PineSweeper')
 
     my_app = SweeperApp()
