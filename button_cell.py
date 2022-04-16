@@ -1,6 +1,6 @@
-from PySide6.QtWidgets import QHBoxLayout, QPushButton, QSizePolicy
-from PySide6.QtSvgWidgets import QSvgWidget
-from PySide6.QtCore import Qt
+from PySide2.QtWidgets import QHBoxLayout, QPushButton, QSizePolicy
+from PySide2.QtSvg import QSvgWidget
+from PySide2.QtCore import Qt
 
 import rc_images
 

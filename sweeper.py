@@ -3,11 +3,10 @@ import sys
 import random
 import time
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QSizePolicy
-from PySide6.QtWidgets import QWidget, QPushButton, QMessageBox
-from PySide6.QtGui import QAction, QActionGroup
-from PySide6.QtSvgWidgets import QSvgWidget
-from PySide6.QtCore import QTimer, QObject, QCoreApplication, QSettings
+from PySide2.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QSizePolicy
+from PySide2.QtWidgets import QWidget, QPushButton, QMessageBox, QAction, QActionGroup
+from PySide2.QtSvg import QSvgWidget
+from PySide2.QtCore import QTimer, QObject, QCoreApplication, QSettings
 
 from button_cell import ButtonCell
 from led_display import LedDisplay
@@ -290,4 +289,4 @@ if __name__ == '__main__':
     my_app.setWindowTitle('PineSweeper')
     my_app.show()
     my_app.resize(1600, 900)
-    sys.exit(app.exec())
+    sys.exit(app.exec_())

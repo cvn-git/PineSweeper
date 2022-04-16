@@ -1,5 +1,5 @@
-from PySide6.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
-from PySide6.QtSvgWidgets import QSvgWidget
+from PySide2.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
+from PySide2.QtSvg import QSvgWidget
 
 import rc_images
 
