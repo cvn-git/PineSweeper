@@ -1,7 +1,13 @@
-from PySide2.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
-from PySide2.QtSvg import QSvgWidget
+import importlib
 
-import rc_images
+if importlib.util.find_spec('PySide2'):
+    from PySide2.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
+    from PySide2.QtSvg import QSvgWidget
+    import rc_images_pyside2
+else:
+    from PySide6.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
+    from PySide6.QtSvgWidgets import QSvgWidget
+    import rc_images_pyside6
 
 
 class Digit(QSvgWidget):

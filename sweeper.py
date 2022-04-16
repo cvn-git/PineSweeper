@@ -2,16 +2,24 @@ import os
 import sys
 import random
 import time
+import importlib
 
-from PySide2.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QSizePolicy
-from PySide2.QtWidgets import QWidget, QPushButton, QMessageBox, QAction, QActionGroup
-from PySide2.QtSvg import QSvgWidget
-from PySide2.QtCore import QTimer, QObject, QCoreApplication, QSettings
+if importlib.util.find_spec('PySide2'):
+    from PySide2.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QSizePolicy
+    from PySide2.QtWidgets import QWidget, QPushButton, QMessageBox, QAction, QActionGroup
+    from PySide2.QtSvg import QSvgWidget
+    from PySide2.QtCore import QTimer, QObject, QCoreApplication, QSettings
+    import rc_images_pyside2
+else:
+    from PySide6.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QVBoxLayout, QSizePolicy
+    from PySide6.QtWidgets import QWidget, QPushButton, QMessageBox
+    from PySide6.QtGui import QAction, QActionGroup
+    from PySide6.QtSvgWidgets import QSvgWidget
+    from PySide6.QtCore import QTimer, QObject, QCoreApplication, QSettings
+    import rc_images_pyside6
 
 from button_cell import ButtonCell
 from led_display import LedDisplay
-
-import rc_images
 
 
 class Board(QWidget):
