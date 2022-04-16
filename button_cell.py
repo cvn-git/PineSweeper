@@ -1,6 +1,6 @@
-from PySide2.QtWidgets import QHBoxLayout, QPushButton, QSizePolicy
-from PySide2.QtSvg import QSvgWidget
-from PySide2.QtCore import Qt
+from PySide6.QtWidgets import QHBoxLayout, QPushButton, QSizePolicy
+from PySide6.QtSvgWidgets import QSvgWidget
+from PySide6.QtCore import Qt
 
 import rc_images
 
@@ -10,7 +10,7 @@ class ButtonCell(QPushButton):
         QPushButton.__init__(self, parent=parent)
         self.clicked.connect(self._on_clicked)
         self.setLayout(QHBoxLayout())
-        self.layout().setMargin(2)
+        self.layout().setContentsMargins(2, 2, 2, 2)
 
         self._is_mine = is_mine
         self._is_opened = False
@@ -111,7 +111,7 @@ class ButtonCell(QPushButton):
         if self.is_flagged():
             self.layout().takeAt(0).widget().deleteLater()   # delete the flag
             widget_back.setLayout(QHBoxLayout())
-            widget_back.layout().setMargin(0)
+            widget_back.layout().setContentsMargins(0, 0, 0, 0)
             widget_cross = QSvgWidget(':/images/cross-mark.svg', widget_back)
             widget_back.layout().addWidget(widget_cross)
 

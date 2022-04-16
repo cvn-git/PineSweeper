@@ -1,5 +1,5 @@
-from PySide2.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
-from PySide2.QtSvg import QSvgWidget
+from PySide6.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
+from PySide6.QtSvgWidgets import QSvgWidget
 
 import rc_images
 
@@ -11,7 +11,7 @@ class Digit(QSvgWidget):
         self.setFixedWidth(int(round(height * 0.6)))
 
         self.setLayout(QHBoxLayout())
-        self.layout().setMargin(0)
+        self.layout().setContentsMargins(0, 0, 0, 0)
         self.layout().setSpacing(0)
 
         self.set_value(0)
@@ -27,7 +27,7 @@ class LedDisplay(QWidget):
         super(LedDisplay, self).__init__(parent=parent)
         self.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         self.setLayout(QHBoxLayout())
-        self.layout().setMargin(0)
+        self.layout().setContentsMargins(0, 0, 0, 0)
         self.layout().setSpacing(0)
 
         self._digits = list()
