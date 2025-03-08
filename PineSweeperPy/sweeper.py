@@ -291,10 +291,10 @@ if __name__ == '__main__':
     # For QSettings
     QCoreApplication.setOrganizationName('CVN')
     QCoreApplication.setOrganizationDomain('github.com')
-    QCoreApplication.setApplicationName('PineSweeper')
+    QCoreApplication.setApplicationName('PineSweeperPy')
 
     my_app = SweeperApp()
-    my_app.setWindowTitle('PineSweeper')
+    my_app.setWindowTitle('PineSweeperPy')
     my_app.show()
     my_app.resize(1600, 900)
     sys.exit(app.exec_())
