@@ -3,10 +3,14 @@ import importlib
 if importlib.util.find_spec('PySide2'):
     from PySide2.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
     from PySide2.QtSvg import QSvgWidget
+    from PySide2.QtGui import QPalette
+    from PySide2.QtCore import Qt
     import rc_images_pyside2
 else:
     from PySide6.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
     from PySide6.QtSvgWidgets import QSvgWidget
+    from PySide6.QtGui import QPalette
+    from PySide6.QtCore import Qt
     import rc_images_pyside6
 
 
@@ -35,6 +39,11 @@ class LedDisplay(QWidget):
         self.setLayout(QHBoxLayout())
         self.layout().setContentsMargins(0, 0, 0, 0)
         self.layout().setSpacing(0)
+
+        palette = QPalette()
+        palette.setColor(QPalette.Window, Qt.black)
+        self.setAutoFillBackground(True)
+        self.setPalette(palette)
 
         self._digits = list()
         for k in range(num_digits):

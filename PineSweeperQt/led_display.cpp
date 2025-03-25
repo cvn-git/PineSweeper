@@ -1,6 +1,7 @@
 #include "led_display.h"
 
 #include <QHBoxLayout>
+#include <QPalette>
 
 LedDisplay::LedDisplay(QWidget* parent, size_t num_digits, size_t height)
     : QWidget{ parent }
@@ -10,6 +11,11 @@ LedDisplay::LedDisplay(QWidget* parent, size_t num_digits, size_t height)
     auto* const layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
+
+    QPalette palette;
+    palette.setColor(QPalette::Window, Qt::black);
+    setAutoFillBackground(true);
+    setPalette(palette);
 
     for (size_t k = 0; k < num_digits; ++k)
     {
