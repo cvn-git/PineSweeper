@@ -22,5 +22,5 @@ void LedDigit::setValue(size_t value)
     if ((value < 0) || (value > 9))
         throw std::runtime_error("Invalid digit value");
 
-    load(QString::fromStdString(std::format(":/images/7Segment{}.svg", value)));
+    load(QString(":/images/7Segment%1.svg").arg(value));
 }

@@ -143,9 +143,9 @@ void ButtonCell::refreshAppearance()
 {
     if (is_opened_)
     {
-        const std::string color = is_mine_ ? "red" : "transparent";
-        setStyleSheet(QString::fromStdString(std::format(
-            "border-style: inset; border-color: gray; border-width: 1px;background-color: {};", color)));
+        const QString color = is_mine_ ? "red" : "transparent";
+        setStyleSheet(
+            QString("border-style: inset; border-color: gray; border-width: 1px;background-color: %1;").arg(color));
 
         if (widget_flag_)
             widget_flag_->setVisible(false);
@@ -158,8 +158,7 @@ void ButtonCell::refreshAppearance()
         }
         else if (num_surrounding_mines_ > 0)
         {
-            widget_back = new QSvgWidget(
-                QString::fromStdString(std::format(":/images/number-{}.svg", num_surrounding_mines_)));
+            widget_back = new QSvgWidget(QString(":/images/number-%1.svg").arg(num_surrounding_mines_));
         }
 
         if (widget_back)
